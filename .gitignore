@@ -1,0 +1,10 @@
+.DS_Store
+.env
+*.log
+
+backend/node_modules/
+backend/uploads/
+
+src/bank-app/node_modules/
+src/bank-app/dist/
+src/bank-app/vite.log

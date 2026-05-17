@@ -1,0 +1,53 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: trustbank
+      POSTGRES_USER: trustbank
+      POSTGRES_PASSWORD: trustbank_password
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trustbank -d trustbank"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ./backend
+    environment:
+      PORT: 4000
+      DATABASE_URL: postgres://trustbank:trustbank_password@db:5432/trustbank
+      CLIENT_ORIGIN: http://localhost:5173
+      UPLOAD_DIR: /app/uploads
+      OTP_SECRET: ${OTP_SECRET:-change-this-before-production}
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_SECURE: ${SMTP_SECURE:-true}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      MAIL_FROM: ${MAIL_FROM:-OceanicFirst <no-reply@example.com>}
+      ADMIN_FIRST_LOGIN_OTP_EMAIL: ${ADMIN_FIRST_LOGIN_OTP_EMAIL:-}
+    ports:
+      - "127.0.0.1:4000:4000"
+    volumes:
+      - id_uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./src/bank-app
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:
+  id_uploads:
