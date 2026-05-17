@@ -44,7 +44,7 @@ services:
     build:
       context: ./src/bank-app
     ports:
-      - "8080:80"
+      - "${WEB_PORT:-8080}:80"
     depends_on:
       - api
 
