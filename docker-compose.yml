@@ -43,11 +43,28 @@ services:
   web:
     build:
       context: ./src/bank-app
-    ports:
-      - "${WEB_PORT:-8080}:80"
+    expose:
+      - "80"
     depends_on:
       - api
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "${WEB_PORT:-8080}:80"
+      - "${HTTPS_PORT:-8443}:443"
+    environment:
+      APP_DOMAIN: ${APP_DOMAIN:-localhost}
+      TLS_EMAIL: ${TLS_EMAIL:-admin@example.com}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
 
 volumes:
   postgres_data:
   id_uploads:
+  caddy_data:
+  caddy_config:

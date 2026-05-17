@@ -1,0 +1,11 @@
+{
+  email {$TLS_EMAIL}
+}
+
+:80 {
+  reverse_proxy web:80
+}
+
+{$APP_DOMAIN} {
+  reverse_proxy web:80
+}
