@@ -762,12 +762,12 @@ function HomePage({ onSignIn, onOpenAccount }) {
       <section className="bg-emerald-500">
         <div className="mx-auto grid min-h-[calc(100vh-84px)] max-w-7xl items-center gap-10 px-5 py-10 sm:py-12 lg:grid-cols-[1fr_460px] lg:px-8">
           <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-black uppercase tracking-wide text-emerald-950">Personal finance</p>
+            <p className="mb-4 text-sm font-black uppercase tracking-wide text-emerald-950">Personal banking</p>
             <h1 className="text-4xl font-black leading-tight tracking-tight text-black sm:text-5xl lg:text-7xl">
-              Simple tools for everyday money.
+              Everyday banking with OceanicFirst.
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-emerald-950 sm:text-xl">
-              Check your money, open an account, and login securely without digging through every product screen first.
+              View your balances, manage your accounts, and access secure online banking whenever you need it.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
@@ -791,17 +791,17 @@ function HomePage({ onSignIn, onOpenAccount }) {
             <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-white/30" />
             <div className="absolute bottom-12 right-8 w-96 rounded-[2rem] bg-black p-8 text-white shadow-2xl">
               <ShieldCheck className="h-14 w-14 text-emerald-400" />
-              <h2 className="mt-8 text-3xl font-black">Manage money securely from the web.</h2>
+              <h2 className="mt-8 text-3xl font-black">Secure banking from wherever you are.</h2>
               <p className="mt-4 text-lg font-semibold leading-7 text-slate-300">
-                Create your login, protect your details, and access your accounts after login.
+                Bank with confidence using protected online access and account verification.
               </p>
             </div>
             <div className="absolute left-4 top-24 w-72 rounded-[2rem] border border-emerald-900 bg-white p-5 shadow-xl">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="h-6 w-6 text-emerald-700" />
                 <div>
-                  <p className="font-black text-black">Ready to register</p>
-                  <p className="text-sm font-medium text-slate-600">Open an account with your own secure login.</p>
+                  <p className="font-black text-black">Account opening</p>
+                  <p className="text-sm font-medium text-slate-600">Start your secure application online.</p>
                 </div>
               </div>
             </div>
@@ -1200,19 +1200,19 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
 
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-8 sm:py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(420px,0.7fr)] lg:px-8">
         <section>
-          <p className="text-sm font-black uppercase tracking-wide text-emerald-800">Open account</p>
+          <p className="text-sm font-black uppercase tracking-wide text-emerald-800">New customer application</p>
           <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl lg:text-6xl">
-            Open your US account.
+            Open a personal checking and savings account.
           </h1>
           <p className="mt-5 max-w-2xl text-lg font-semibold leading-8 text-slate-700">
-            We need your SSN, home address, and a government ID before creating your login and account numbers.
+            To help protect your account, we collect the identity information required to review and open your account.
           </p>
           <div className="mt-8 rounded-3xl bg-emerald-50 p-6">
             <h2 className="text-xl font-black text-slate-950">What happens next</h2>
             <ul className="mt-4 space-y-3 text-slate-700">
-              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Verify your identity with SSN, address, and ID document.</li>
-              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Login using the same username and password.</li>
-              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Receive generated checking and savings account numbers.</li>
+              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Submit your personal and identity information for secure review.</li>
+              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Use your username and password to access online banking.</li>
+              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Receive your checking and savings account numbers after approval.</li>
             </ul>
           </div>
         </section>
@@ -3000,7 +3000,7 @@ export default function App() {
             </span>
             <div className="min-w-0">
               <p className="truncate text-lg font-black tracking-tight">OceanicFirst</p>
-              <p className="text-xs font-bold text-emerald-950">Personal finance</p>
+              <p className="text-xs font-bold text-emerald-950">Personal banking</p>
             </div>
           </button>
           <div className="hidden items-center gap-3 md:flex">
