@@ -75,7 +75,7 @@ const appAreas = [
     label: "Access",
     icon: Lock,
     groups: [
-      { id: "sign-in", label: "Sign In", pages: ["Login", "MFA Verification", "Biometric Setup"] },
+      { id: "sign-in", label: "Login", pages: ["Login", "MFA Verification", "Biometric Setup"] },
       { id: "recovery", label: "Recovery", pages: ["Forgot Password", "Password Reset"] },
     ],
   },
@@ -139,11 +139,11 @@ const pageContent = {
     subtitle: "Open an account, manage your money, send payments, and track everything securely from your phone or browser.",
     icon: Home,
     cta: "Open an account",
-    secondary: "Sign in",
+    secondary: "Login",
     blocks: [
       ["Fast account opening", "Start your application online with guided identity verification."],
       ["Real-time money view", "See balances, pending payments, recent activity, and alerts in one place."],
-      ["Security by default", "Multi-factor sign-in, payment confirmation, device checks, and fraud alerts are built in."],
+      ["Security by default", "Multi-factor login, payment confirmation, device checks, and fraud alerts are built in."],
     ],
   },
   Features: {
@@ -290,10 +290,10 @@ const pageContent = {
   },
   Login: {
     title: "Welcome back",
-    subtitle: "Sign in securely to access your account.",
+    subtitle: "Login securely to access your account.",
     icon: Lock,
     form: ["Email or customer ID", "Password"],
-    cta: "Sign in",
+    cta: "Login",
     secondary: "Forgot password?",
     blocks: [["Security note", "Never share your password or verification code with anyone." ]],
   },
@@ -305,7 +305,7 @@ const pageContent = {
     options: ["SMS code", "Email code", "Authenticator app", "Push approval"],
   },
   "Biometric Setup": {
-    title: "Enable faster sign-in",
+    title: "Enable faster login",
     subtitle: "Use Face ID, Touch ID, or fingerprint login to access your account quickly and securely.",
     icon: Smartphone,
     cta: "Enable biometrics",
@@ -507,7 +507,7 @@ const pageContent = {
     title: "Security settings",
     subtitle: "Control how your account is protected.",
     icon: Settings,
-    blocks: [["Password", "Last changed 42 days ago."], ["MFA", "Authenticator app enabled."], ["Trusted devices", "2 active devices."], ["Login history", "View recent sign-ins and remove suspicious sessions." ]],
+    blocks: [["Password", "Last changed 42 days ago."], ["MFA", "Authenticator app enabled."], ["Trusted devices", "2 active devices."], ["Login history", "View recent logins and remove suspicious sessions." ]],
   },
   "Admin Dashboard": {
     title: "Admin dashboard",
@@ -753,7 +753,7 @@ function HomePage({ onSignIn, onOpenAccount }) {
               className="inline-flex items-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-black text-white transition hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-200"
             >
               <Lock className="h-4 w-4" aria-hidden="true" />
-              Sign in
+              Login
             </button>
           </div>
         </div>
@@ -767,7 +767,7 @@ function HomePage({ onSignIn, onOpenAccount }) {
               Simple tools for everyday money.
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-emerald-950 sm:text-xl">
-              Check your money, open an account, and sign in securely without digging through every product screen first.
+              Check your money, open an account, and login securely without digging through every product screen first.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
@@ -775,7 +775,7 @@ function HomePage({ onSignIn, onOpenAccount }) {
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-black px-7 py-4 text-base font-black text-white transition hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-white"
               >
                 <Lock className="h-5 w-5" aria-hidden="true" />
-                Sign in
+                Login
               </button>
               <button
                 onClick={onOpenAccount}
@@ -793,7 +793,7 @@ function HomePage({ onSignIn, onOpenAccount }) {
               <ShieldCheck className="h-14 w-14 text-emerald-400" />
               <h2 className="mt-8 text-3xl font-black">Manage money securely from the web.</h2>
               <p className="mt-4 text-lg font-semibold leading-7 text-slate-300">
-                Create your login, protect your details, and access your accounts after sign in.
+                Create your login, protect your details, and access your accounts after login.
               </p>
             </div>
             <div className="absolute left-4 top-24 w-72 rounded-[2rem] border border-emerald-900 bg-white p-5 shadow-xl">
@@ -1148,7 +1148,7 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
               onClick={onSignIn}
               className="rounded-xl bg-black px-5 py-3 text-sm font-black text-white transition hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-200"
             >
-              Sign in
+              Login
             </button>
           </div>
         </header>
@@ -1160,7 +1160,7 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
               Your account has been created
             </h1>
             <p className="mt-4 text-lg font-semibold leading-8 text-slate-700">
-              Sign in with username <span className="font-black text-slate-950">{createdUsername}</span> and the password you created.
+              Login with username <span className="font-black text-slate-950">{createdUsername}</span> and the password you created.
             </p>
             <p className="mt-3 text-base font-semibold leading-7 text-slate-700">
               Because this is your first login, you will need to request your account activation code from your account officer.
@@ -1193,7 +1193,7 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
             onClick={onSignIn}
             className="rounded-xl bg-black px-5 py-3 text-sm font-black text-white transition hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-200"
           >
-            Sign in
+            Login
           </button>
         </div>
       </header>
@@ -1211,7 +1211,7 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
             <h2 className="text-xl font-black text-slate-950">What happens next</h2>
             <ul className="mt-4 space-y-3 text-slate-700">
               <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Verify your identity with SSN, address, and ID document.</li>
-              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Sign in using the same username and password.</li>
+              <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Login using the same username and password.</li>
               <li className="flex gap-3"><CheckCircle2 className="h-6 w-6 shrink-0 text-emerald-700" aria-hidden="true" />Receive generated checking and savings account numbers.</li>
             </ul>
           </div>
@@ -1405,7 +1405,7 @@ function SignUpPage({ onCreateAccount, onHome, onSignIn }) {
           <p className="mt-4 text-center text-sm text-slate-600">
             Already registered?{" "}
             <button type="button" onClick={onSignIn} className="font-black text-emerald-800 underline underline-offset-4">
-              Sign in
+              Login
             </button>
           </p>
         </form>
